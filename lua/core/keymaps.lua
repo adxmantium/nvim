@@ -36,7 +36,14 @@ vim.keymap.set(
 	{ desc = "Replace all instances of current word" }
 )
 
-vim.keymap.set("n", "<C-f>", [[:execute "!~/scripts/tmux-sessions.sh"<CR>]], { desc = "Change tmux sessions" })
+-- tmux keymaps - changes sessions (custom name or by dirname)
+vim.keymap.set("n", "<C-f>", [[:execute "!~/scripts/tmux/tmux-sessions.sh"<CR>]], { desc = "Change tmux sessions" })
+vim.keymap.set(
+	"n",
+	"<C-g>",
+	[[:execute "!~/scripts/tmux/tmux-sessions-by-dirname.sh"<CR>]],
+	{ desc = "Change tmux sessions by dirname" }
+)
 
 -- clear search highlights
 vim.keymap.set("n", "<leader>cs", ":nohl<CR>", { desc = "Clear search highlights" })
