@@ -37,3 +37,6 @@ vim.keymap.set(
 )
 
 vim.keymap.set("n", "<C-f>", [[:execute "!~/scripts/tmux-sessions.sh"<CR>]], { desc = "Change tmux sessions" })
+
+-- clear search highlights
+vim.keymap.set("n", "<leader>cs", ":nohl<CR>", { desc = "Clear search highlights" })
