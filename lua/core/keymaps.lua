@@ -37,11 +37,16 @@ vim.keymap.set(
 )
 
 -- tmux keymaps - changes sessions (custom name or by dirname)
-vim.keymap.set("n", "<C-f>", [[:execute "!~/scripts/tmux/tmux-sessions.sh"<CR>]], { desc = "Change tmux sessions" })
+vim.keymap.set(
+	"n",
+	"<C-f>",
+	[[:execute "!~/.dotfiles/scripts/tmux-sessions.sh"<CR>]],
+	{ desc = "Change tmux sessions" }
+)
 vim.keymap.set(
 	"n",
 	"<C-g>",
-	[[:execute "!~/scripts/tmux/tmux-sessions-by-dirname.sh"<CR>]],
+	[[:execute "!~/.dotfiles/scripts/tmux-sessions-by-dirname.sh"<CR>]],
 	{ desc = "Change tmux sessions by dirname" }
 )
 
