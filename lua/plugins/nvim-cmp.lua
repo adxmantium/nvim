@@ -8,6 +8,7 @@ return {
 		"L3MON4D3/LuaSnip", -- lua snippet engine
 		"saadparwaiz1/cmp_luasnip", -- lua autocomplete
 		"rafamadriz/friendly-snippets", -- useful snippets for a lot of languages
+		{ "zbirenbaum/copilot-cmp", enabled = require("env").IS_WORK }, -- copilot suggestions in cmp menu
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -16,6 +17,9 @@ return {
 
 		-- load vs-code-like snippets from plugins (ex: friendly-snippet)
 		require("luasnip.loaders.from_vscode").lazy_load()
+
+		-- init copilot-cmp
+		require("copilot-cmp").setup()
 
 		cmp.setup({
 			completion = {
