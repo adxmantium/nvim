@@ -19,7 +19,7 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		-- init copilot-cmp
-		require("copilot-cmp").setup()
+		require("copilot_cmp").setup()
 
 		cmp.setup({
 			completion = {
@@ -41,6 +41,7 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
+				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
