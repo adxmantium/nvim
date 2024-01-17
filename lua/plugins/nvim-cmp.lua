@@ -19,7 +19,9 @@ return {
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		-- init copilot-cmp
-		require("copilot_cmp").setup()
+		if require("env").IS_WORK then
+			require("copilot_cmp").setup()
+		end
 
 		cmp.setup({
 			completion = {
