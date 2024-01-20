@@ -20,6 +20,7 @@ return {
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				go = { "gofumpt", "goimports" },
+				php = { "phpcs" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

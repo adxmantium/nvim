@@ -81,6 +81,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		lspconfig["intelephense"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "php" },
+		})
+
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
