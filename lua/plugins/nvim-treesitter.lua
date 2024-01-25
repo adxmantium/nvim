@@ -4,10 +4,6 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		enabled = true,
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			"windwp/nvim-ts-autotag",
-		},
 		config = function()
 			-- import nvim-treesitter plugin
 			local treesitter = require("nvim-treesitter.configs")
@@ -19,15 +15,12 @@ return {
 				},
 				-- enable indentation
 				indent = { enable = true },
-				-- enable autotagging (w/ nvim-ts-autotag plugin)
-				autotag = {
-					enable = true,
-				},
 				-- ensure these language parsers are installed
 				ensure_installed = {
 					"json",
 					"javascript",
 					"typescript",
+					"jsdoc",
 					"tsx",
 					"yaml",
 					"html",
@@ -39,6 +32,8 @@ return {
 					"vim",
 					"gitignore",
 					"go",
+					"php",
+					"phpdoc",
 				},
 				incremental_selection = {
 					enable = true,
@@ -50,9 +45,6 @@ return {
 					},
 				},
 			})
-
-			-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
-			-- require("ts_context_commentstring").setup({})
 		end,
 	},
 }
