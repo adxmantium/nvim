@@ -54,6 +54,10 @@ return {
 					ellipsis_char = "...",
 				}),
 			},
+			-- improve performance by setting max entries
+			performance = {
+				max_view_entries = 10,
+			},
 		})
 	end,
 }
