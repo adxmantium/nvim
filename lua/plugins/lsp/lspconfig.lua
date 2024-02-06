@@ -79,6 +79,13 @@ return {
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				implicitProjectConfiguration = {
+					-- enable type checking of js/ts files; this is overwritten if project has a jsconfig.json/tsconfig.json file
+					-- @see: https://github.com/typescript-language-server/typescript-language-server/blob/master/docs/configuration.md/#workspacedidchangeconfiguration
+					checkJs = true,
+				},
+			},
 		})
 
 		lspconfig["intelephense"].setup({
