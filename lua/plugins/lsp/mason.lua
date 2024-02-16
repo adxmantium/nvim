@@ -1,7 +1,7 @@
 -- see: https://github.com/williamboman/mason-lspconfig.nvim
 return {
 	"williamboman/mason.nvim", -- plugin for a package manager for managing LSPs, linters, & formatters
-	event = "VeryLazy",
+	event = { "BufReadPre", "BufNewFile" }, -- lazy load this on buffer read
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},

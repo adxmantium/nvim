@@ -1,6 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
-	event = "BufWinEnter",
+	keys = { "<leader>sm" }, -- lazyload harpoon on <leader>sm enter
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},

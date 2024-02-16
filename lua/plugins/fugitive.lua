@@ -1,5 +1,5 @@
 return {
 	"tpope/vim-fugitive",
-	event = "BufReadPre",
+	cmd = "Git", -- lazyload when :Git command is entered
 	enabled = true,
 }
