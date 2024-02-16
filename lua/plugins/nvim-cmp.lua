@@ -1,9 +1,10 @@
 return {
 	"hrsh7th/nvim-cmp", -- autocompletion plugin
-	event = "InsertEnter", -- lazy load this on vim insert mode
+	event = { "BufReadPre", "BufNewFile" }, -- lazy load this on buffer read
 	dependencies = { -- plugin dependencies
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
+		"hrsh7th/cmp-cmdline", -- cmdline completion
 		"onsails/lspkind.nvim", -- vs-code like pictograms
 		"L3MON4D3/LuaSnip", -- lua snippet engine
 		"saadparwaiz1/cmp_luasnip", -- lua autocomplete
@@ -44,6 +45,7 @@ return {
 				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
+				{ name = "cmdline" }, -- cmdline completion
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
 			}),
@@ -58,6 +60,21 @@ return {
 			performance = {
 				max_view_entries = 10,
 			},
+		})
+
+		-- `:` cmdline setup.
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "path" },
+			}, {
+				{
+					name = "cmdline",
+					option = {
+						ignore_cmds = { "Man", "!" },
+					},
+				},
+			}),
 		})
 	end,
 }

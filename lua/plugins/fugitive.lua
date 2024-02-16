@@ -1,5 +1,5 @@
 return {
 	"tpope/vim-fugitive",
-	event = "BufWinEnter",
-	enabled = false,
+	event = "BufReadPre",
+	enabled = true,
 }

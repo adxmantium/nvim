@@ -1,5 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
+	event = "BufWinEnter",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
