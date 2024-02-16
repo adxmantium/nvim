@@ -1,6 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
-	keys = { "<leader>sm" }, -- lazyload harpoon on <leader>sm enter
+	keys = { "<leader>hh" }, -- lazyload harpoon keymap enter
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
@@ -13,7 +13,7 @@ return {
 
 		keymap.set(
 			"n",
-			"<leader>h",
+			"<leader>ha",
 			"<cmd>lua require('harpoon.mark').add_file()<cr>",
 			{ desc = "Mark file with harpoon" }
 		)
@@ -26,13 +26,13 @@ return {
 		)
 		keymap.set(
 			"n",
-			"<leader>m",
+			"<leader>hm",
 			"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
 			{ desc = "Show menu of active marks" }
 		)
 		keymap.set(
 			"n",
-			"<leader>sm",
+			"<leader>hh",
 			":Telescope harpoon marks<cr>",
 			{ desc = "Search for mark w/ preview via Telescope" }
 		)
