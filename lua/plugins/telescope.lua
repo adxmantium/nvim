@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim", -- plugin for fuzzy finding files & text in files
 	branch = "0.1.x",
-	keys = { "<leader><space>" }, -- lazyload on <leader><space>
+	keys = { "<leader><space>", "<leader>/", "<leader>hh" }, -- lazy load on fzf.files(), fzf.live_grep(), harpoon Telescope marks
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -31,10 +31,10 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
 
-		-- keymap.set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
+		-- keymap.set("n", "<leader><space>", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" }) -- replaced by fzf-lua
+		-- keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" }) -- replaced by fzf-lua
 		keymap.set("n", "<leader>,", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
 		keymap.set("n", "<leader>.", "<cmd>Telescope buffers<cr>", { desc = "Fuzzy find open buffers" })
-		keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 		keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
 		keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Find string under cursor in cwd" })
 		keymap.set("n", "<leader>gc", "<cmd>Telescope git_commit<cr>", { desc = "Find string under cursor in cwd" })
