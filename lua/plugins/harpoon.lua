@@ -1,6 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
-	keys = { "<leader><space>", "<leader>/", "<leader>hh" }, -- lazy load on fzf.files(), fzf.live_grep(), harpoon Telescope marks
+	keys = { "<leader>hh" }, -- lazy load key enter
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},

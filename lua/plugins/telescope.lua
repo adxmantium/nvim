@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim", -- plugin for fuzzy finding files & text in files
 	branch = "0.1.x",
-	keys = { "<leader><space>", "<leader>/", "<leader>hh" }, -- lazy load on fzf.files(), fzf.live_grep(), harpoon Telescope marks
+	events = { "BufReadFile", "BufNewFile" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
