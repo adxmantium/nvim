@@ -2,6 +2,9 @@
 return {
 	"williamboman/mason.nvim", -- plugin for a package manager for managing LSPs, linters, & formatters
 	event = { "BufReadPre", "BufNewFile" }, -- lazy load this on buffer read
+	keys = {
+		{ "<leader>M", ":Mason<CR>", desc = "Mason" },
+	},
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 	},

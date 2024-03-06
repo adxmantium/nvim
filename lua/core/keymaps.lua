@@ -7,7 +7,6 @@ vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decr
 
 -- brings up lazy plugin UI
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy" })
-vim.keymap.set("n", "<leader>M", ":Mason<cr>", { desc = "Mason" })
 vim.keymap.set("n", "<leader>E", ":Explore<cr>", { desc = "Opens Explore tree" })
 
 -- allows moving highlighted lines

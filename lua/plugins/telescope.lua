@@ -1,7 +1,7 @@
 return {
 	"nvim-telescope/telescope.nvim", -- plugin for fuzzy finding files & text in files
 	branch = "0.1.x",
-	events = { "BufReadFile", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },

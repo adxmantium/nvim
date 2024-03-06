@@ -1,7 +1,10 @@
 return {
 	"adxmantium/hound",
 	cmd = "Hound",
-	keys = { "<leader>hgo", "<leader>hso" },
+	keys = {
+		{ "<leader>hgo", ":Hound go<CR>", desc = "Hound google search" },
+		{ "<leader>hso", ":Hound so<CR>", desc = "Hound stackoverflow search" },
+	},
 	config = function()
 		local hound = require("hound")
 
@@ -17,8 +20,5 @@ return {
 				},
 			},
 		})
-
-		vim.keymap.set("n", "<leader>hgo", ":Hound go<CR>", { desc = "Hound google search" })
-		vim.keymap.set("n", "<leader>hso", ":Hound so<CR>", { desc = "Hound stackoverflow search" })
 	end,
 }

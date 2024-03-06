@@ -14,7 +14,7 @@
 return {
 	"catppuccin/nvim",
 	lazy = true, -- make sure we load this during startup if it is your main colorscheme
-	event = "BufWinEnter",
+	event = { "VeryLazy" },
 	priority = 1000, -- make sure to load this before all the other start plugins
 	enabled = true,
 	name = "catppuccin-macchiato", -- name this whatever the repo name is, then update the colorscheme reference
