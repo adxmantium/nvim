@@ -1,5 +1,6 @@
 return {
 	"ThePrimeagen/harpoon",
+	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{
 			"<leader>ha",

@@ -1,5 +1,6 @@
 return {
 	"ibhagwan/fzf-lua",
+	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{ "<leader><space>", "<cmd>lua require('fzf-lua').files()<CR>", desc = "Fuzzy find files in cwd" },
 		{ "<leader>/", "<cmd>lua require('fzf-lua').lgrep_curbuf()<cr>", desc = "Live grep current buffer" },
