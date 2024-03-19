@@ -27,6 +27,31 @@ return {
 			":Telescope harpoon marks<cr>",
 			desc = "Search for mark w/ preview via Telescope",
 		},
+		{
+			"¡",
+			"<cmd>lua require('harpoon.ui').nav_file(1)<cr>",
+			desc = "Nav directly to file 1 (option key + 1)",
+		},
+		{
+			"™",
+			"<cmd>lua require('harpoon.ui').nav_file(2)<cr>",
+			desc = "Nav directly to file 2 (option key + 2)",
+		},
+		{
+			"£",
+			"<cmd>lua require('harpoon.ui').nav_file(3)<cr>",
+			desc = "Nav directly to file 3 (option key + 3)",
+		},
+		{
+			"¢",
+			"<cmd>lua require('harpoon.ui').nav_file(4)<cr>",
+			desc = "Nav directly to file 4 (option key + 4)",
+		},
+		{
+			"∞",
+			"<cmd>lua require('harpoon.ui').nav_file(5)<cr>",
+			desc = "Nav directly to file 5 (option key + 5)",
+		},
 	}, -- lazy load key enter
 	dependencies = {
 		"nvim-lua/plenary.nvim",
