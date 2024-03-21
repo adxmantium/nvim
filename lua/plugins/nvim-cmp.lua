@@ -17,7 +17,9 @@ return {
 		local lspkind = require("lspkind")
 
 		-- load vs-code-like snippets from plugins (ex: friendly-snippet)
-		require("luasnip.loaders.from_vscode").lazy_load()
+		require("luasnip.loaders.from_vscode").lazy_load({
+			paths = vim.fn.stdpath("config") .. "/lua/plugins/snippets",
+		})
 
 		-- init copilot-cmp
 		require("copilot_cmp").setup()

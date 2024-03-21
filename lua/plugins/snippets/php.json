@@ -1,0 +1,7 @@
+{
+  "spy": {
+    "prefix": "spy",
+    "body": ["\\Plums\\Spy::inspect(${1:arg});"],
+    "description": "Local spy logger"
+  }
+}

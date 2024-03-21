@@ -1,6 +1,9 @@
 -- set leader key to space
 vim.g.mapleader = " "
 
+-- save with leader w instead
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
+
 -- increment/decrement numbers
 vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
 vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement

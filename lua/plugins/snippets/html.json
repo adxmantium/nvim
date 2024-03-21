@@ -1,0 +1,32 @@
+{
+  "spy": {
+    "prefix": "spy",
+    "body": ["{s:\\Plums\\Spy::inspect(${1:arg})}"],
+    "description": "Local spy logger"
+  },
+  "render": {
+    "prefix": "render",
+    "body": ["{h:$app->render($resource)}"],
+    "description": "Render resource snippet"
+  },
+  "html view filter": {
+    "prefix": ":h",
+    "body": ["{h:${1:arg}}"],
+    "description": "Output something using the 'h' view filter"
+  },
+  "silent view filter": {
+    "prefix": ":s",
+    "body": ["{s:${1:arg}}"],
+    "description": "Output something using the 's' view filter"
+  },
+  "md view filter": {
+    "prefix": ":md",
+    "body": ["{md:${1:arg}}"],
+    "description": "Output something using the 'md' view filter"
+  },
+  "microcopy view filter": {
+    "prefix": ":t",
+    "body": ["{t:${1:arg}}"],
+    "description": "Output something using the 't' view filter"
+  }
+}

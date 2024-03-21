@@ -1,0 +1,52 @@
+{
+  "1 col md table": {
+    "prefix": "|1",
+    "body": ["| ${1:before} |", "| - |", "| ${2:desc} |", "$0"],
+    "description": "Generate single column md table"
+  },
+  "2 col md table": {
+    "prefix": "|2",
+    "body": [
+      "| ${1:before} | ${2:after} |",
+      "| - | - |",
+      "| ${3:desc} | ${4:desc} |",
+      "$0"
+    ],
+    "description": "Generate 2 column md table"
+  },
+  "3 col md table": {
+    "prefix": "|3",
+    "body": [
+      "| ${1:before} | ${2:after} | ${3:after-after} |",
+      "| - | - | - |",
+      "| ${4:desc} | ${5:desc} | ${6:desc} |",
+      "$0"
+    ],
+    "description": "Generate 3 column md table"
+  },
+  "4 col md table": {
+    "prefix": "|4",
+    "body": [
+      "| ${1:before} | ${2:after} | ${3:third} | ${4:last} |",
+      "| - | - | - | - |",
+      "| ${5:desc} | ${6:desc} | ${7:desc} | ${8:desc} |",
+      "$0"
+    ],
+    "description": "Generate 4 column md table"
+  },
+  "link": {
+    "prefix": "[",
+    "body": ["[${1:text}](${2:url})"],
+    "description": "Generate inline link"
+  },
+  "ordered list": {
+    "prefix": "1",
+    "body": ["1. ${1:one}", "2. ${2:two}", "3. ${3:three}", "$0"],
+    "description": "Generate inline link"
+  },
+  "unordered list": {
+    "prefix": "-",
+    "body": ["- ${1:one}", "- ${2:two}", "- ${3:three}", "$0"],
+    "description": "Generate inline link"
+  }
+}
