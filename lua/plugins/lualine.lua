@@ -1,6 +1,6 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	events = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local function test()
