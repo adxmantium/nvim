@@ -19,6 +19,10 @@ return {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<C-l>"] = actions.select_vertical, -- open selection in vertical split
+						["<C-h>"] = actions.select_horizontal, -- open selection in horizontal split
+						["<C-[>"] = actions.preview_scrolling_up, -- scroll up in preview window
+						["<C-]>"] = actions.preview_scrolling_down, -- scroll down in preview window
 					},
 				},
 				file_ignore_patterns = {}, -- add files to ignore
