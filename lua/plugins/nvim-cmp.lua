@@ -45,6 +45,7 @@ return {
 			-- sources for autocompletion
 			sources = cmp.config.sources({
 				{ name = "copilot" },
+				{ name = "codeium" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
@@ -59,7 +60,7 @@ return {
 			},
 			-- improve performance by setting max entries
 			performance = {
-				max_view_entries = 10,
+				max_view_entries = 15,
 			},
 		})
 
