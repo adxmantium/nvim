@@ -12,6 +12,15 @@ return {
 	}, -- lazy load on key enter
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- optional for icon support
 	config = function()
-		require("fzf-lua").setup({})
+		local actions = require("fzf-lua.actions")
+
+		require("fzf-lua").setup({
+			"max-perf",
+			files = {
+				actions = {
+					["ctrl-y"] = { actions.toggle_ignore },
+				},
+			},
+		})
 	end,
 }
