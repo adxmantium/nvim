@@ -4,4 +4,7 @@ return {
 	keys = {
 		{ "<leader>Z", ":ZenMode<CR>", desc = "Zen mode" },
 	},
+	dependencies = {
+		"folke/twilight.nvim",
+	},
 }
