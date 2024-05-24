@@ -46,3 +46,6 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- num of lines above & below cursor (keeps cursor centered)
+opt.scrolloff = 999
