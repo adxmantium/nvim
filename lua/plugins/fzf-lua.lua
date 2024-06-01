@@ -16,6 +16,16 @@ return {
 
 		require("fzf-lua").setup({
 			"max-perf",
+			actions = {
+				files = {
+					["default"] = actions.file_edit_or_qf,
+					["ctrl-s"] = actions.file_split,
+					["ctrl-v"] = actions.file_vsplit,
+					["ctrl-t"] = actions.file_tabedit,
+					["ctrl-q"] = actions.file_sel_to_qf,
+					["alt-l"] = actions.file_sel_to_ll,
+				},
+			},
 			files = {
 				actions = {
 					["ctrl-y"] = { actions.toggle_ignore },
