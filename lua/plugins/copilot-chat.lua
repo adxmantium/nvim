@@ -4,7 +4,7 @@ return {
 		branch = "canary",
 		keys = {
 			{
-				"<leader>ccq",
+				"<leader>cc?",
 				function()
 					local input = vim.fn.input("What??: ")
 					if input ~= "" then
