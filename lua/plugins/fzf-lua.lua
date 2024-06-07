@@ -9,6 +9,7 @@ return {
 			"<cmd>lua require('fzf-lua').live_grep_native()<cr>",
 			desc = "Live grep current project",
 		},
+		{ "<leader>th", "<cmd>FzfLua awesome_colorschemes<CR>", desc = "Open theme picker" },
 	}, -- lazy load on key enter
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- optional for icon support
 	config = function()
