@@ -4,7 +4,7 @@ return {
 		branch = "canary",
 		keys = {
 			{
-				"<leader>cc?",
+				"<leader>;?",
 				function()
 					local input = vim.fn.input("What??: ")
 					if input ~= "" then
@@ -14,7 +14,7 @@ return {
 				desc = "CopilotChat - Quick chat using current buffer as context",
 			},
 			{
-				"<leader>cch",
+				"<leader>;h",
 				function()
 					local actions = require("CopilotChat.actions")
 					require("CopilotChat.integrations.fzflua").pick(actions.help_actions())
@@ -23,7 +23,7 @@ return {
 			},
 			-- Show prompts actions with fzf-lua
 			{
-				"<leader>ccp",
+				"<leader>;a",
 				function()
 					local actions = require("CopilotChat.actions")
 					require("CopilotChat.integrations.fzflua").pick(actions.prompt_actions())
@@ -31,39 +31,9 @@ return {
 				desc = "CopilotChat - Prompt actions",
 			},
 			{
-				"<leader>cc/",
+				"<leader>;;",
 				":CopilotChatToggle<CR>",
 				desc = "CopilotChat ",
-			},
-			{
-				"<leader>cce",
-				":CopilotChatExplain<CR>",
-				desc = "CopilotChat Explain active selection",
-			},
-			{
-				"<leader>cco",
-				":CopilotChatOptimize<CR>",
-				desc = "CopilotChat improve performance and readability",
-			},
-			{
-				"<leader>ccd",
-				":CopilotChatDocs<CR>",
-				desc = "CopilotChat add documentation comment for active selection",
-			},
-			{
-				"<leader>cct",
-				":CopilotChatTests<CR>",
-				desc = "CopilotChat generate tests",
-			},
-			{
-				"<leader>ccf",
-				":CopilotChatFixDiagnostic<CR>",
-				desc = "CopilotChat fix following diagnostic issue",
-			},
-			{
-				"<leader>ccm",
-				":CopilotChatCommit<CR>",
-				desc = "CopilotChat write commit message for the current changes",
 			},
 		},
 		dependencies = {
@@ -72,7 +42,19 @@ return {
 		},
 		opts = {
 			debug = true, -- Enable debugging
-			-- See Configuration section for rest
+			mappings = {
+				reset = {
+					normal = "<C-r>",
+					insert = "<C-r>",
+				},
+			},
+			window = {
+				layout = "float",
+				relative = "cursor",
+				width = 1,
+				height = 0.4,
+				row = 1,
+			},
 		},
 		-- See Commands section for default commands if you want to lazy load on them
 	},
