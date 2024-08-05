@@ -48,13 +48,13 @@ return {
 					insert = "<C-r>",
 				},
 			},
-			window = {
-				layout = "float",
-				relative = "cursor",
-				width = 1,
-				height = 0.4,
-				row = 1,
-			},
+			-- window = {
+			-- 	layout = "float",
+			-- 	relative = "cursor",
+			-- 	width = 1,
+			-- 	height = 0.4,
+			-- 	row = 1,
+			-- },
 		},
 		-- See Commands section for default commands if you want to lazy load on them
 	},
