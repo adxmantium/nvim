@@ -30,6 +30,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- buffer split & vsplit
+vim.keymap.set("n", "<leader>ws", ":split<CR>", { desc = "horizontal buffer split" })
+vim.keymap.set("n", "<leader>we", ":vsplit<CR>", { desc = "vertical buffer split" })
+
 -- lets you start replacing the word and other instances of that same word that you're on
 vim.keymap.set(
 	"n",
