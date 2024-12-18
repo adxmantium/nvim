@@ -30,7 +30,7 @@ return {
 			-- list of servers for mason to install
 			-- in lspconfig.lua, you will need to init the servers there - 1 for each of the installed servers here
 			ensure_installed = {
-				"tsserver",
+				"ts_ls",
 				"html",
 				"lua_ls",
 				"gopls",
