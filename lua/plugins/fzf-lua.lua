@@ -4,7 +4,7 @@ return {
 	keys = {
 		{
 			"<leader><space>",
-			"<cmd>lua require('fzf-lua').files({ fzf_colors = true })<CR>",
+			"<cmd>lua require('fzf-lua').files({ fzf_colors = true, resume = true })<CR>",
 			desc = "Fuzzy find files in cwd",
 		},
 		{ "<leader>/", "<cmd>lua require('fzf-lua').lgrep_curbuf()<cr>", desc = "Live grep current buffer" },
