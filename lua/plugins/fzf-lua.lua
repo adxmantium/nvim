@@ -4,13 +4,13 @@ return {
 	keys = {
 		{
 			"<leader><space>",
-			"<cmd>lua require('fzf-lua').files({ fzf_colors = true, resume = true })<CR>",
+			"<cmd>lua require('fzf-lua').files({ fzf_colors = true })<CR>",
 			desc = "Fuzzy find files in cwd",
 		},
 		{ "<leader>/", "<cmd>lua require('fzf-lua').lgrep_curbuf()<cr>", desc = "Live grep current buffer" },
 		{
 			"<leader>,",
-			"<cmd>lua require('fzf-lua').live_grep_native({ resume = true })<cr>",
+			"<cmd>lua require('fzf-lua').live_grep_native()<cr>",
 			desc = "Live grep current project",
 		},
 		{ "<leader>th", "<cmd>FzfLua awesome_colorschemes<CR>", desc = "Open theme picker" },
