@@ -42,10 +42,11 @@ return {
       "<cmd>lua require('fzf-lua').commands({ fzf_colors = true })<cr>",
       desc = "search neovim commands",
     },
-    { "<leader>re", "<cmd>lua require('fzf-lua').resume({ fzf_colors = true })<cr>",   desc = "resume last search" },
-    { "<leader>mp", "<cmd>lua require('fzf-lua').manpages({ fzf_colors = true })<cr>", desc = "search man pages" },
-    { "<leader>fm", "<cmd>lua require('fzf-lua').marks({ fzf_colors = true })<cr>",    desc = "search marks" },
-  },                                               -- lazy load on key enter
+    { "<leader>re", "<cmd>lua require('fzf-lua').resume({ fzf_colors = true })<cr>",               desc = "resume last search" },
+    { "<leader>mp", "<cmd>lua require('fzf-lua').manpages({ fzf_colors = true })<cr>",             desc = "search man pages" },
+    { "<leader>fm", "<cmd>lua require('fzf-lua').marks({ fzf_colors = true })<cr>",                desc = "search marks" },
+    { "<leader>ds", "<cmd>lua require('fzf-lua').lsp_document_symbols({ fzf_colors = true })<cr>", desc = "search document symbols" },
+  },                                                -- lazy load on key enter
   dependencies = { "nvim-tree/nvim-web-devicons" }, -- optional for icon support
   config = function()
     local actions = require("fzf-lua.actions")
