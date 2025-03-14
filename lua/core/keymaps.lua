@@ -31,15 +31,16 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- buffer split & vsplit
-vim.keymap.set("n", "<leader>ws", ":split<CR>", { desc = "horizontal buffer split" })
-vim.keymap.set("n", "<leader>we", ":vsplit<CR>", { desc = "vertical buffer split" })
+vim.keymap.set("n", "<leader>wh", ":split<CR>", { desc = "Horizontal buffer split (window vertical)" })
+vim.keymap.set("n", "<leader>wv", ":vsplit<CR>", { desc = "Vertical buffer split (window horizontal)" })
+vim.keymap.set("n", "<leader>we", "<C-w>=", { desc = "Equalize window size (window equal)" })
 
 -- lets you start replacing the word and other instances of that same word that you're on
 vim.keymap.set(
-	"n",
-	"<leader>rw",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ desc = "Replace all instances of current word" }
+  "n",
+  "<leader>rw",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  { desc = "Replace all instances of current word" }
 )
 
 -- tmux keymaps - changes sessions (custom name or by dirname)
@@ -61,46 +62,46 @@ vim.keymap.set("n", "<leader>cs", ":nohl<CR>", { desc = "Clear search highlights
 
 -- keymap to run test file for current buffer
 vim.keymap.set("n", "<leader>tr", function()
-	local bufname = vim.fn.bufname("%")
-	local test_filename = bufname:gsub("%.js$", ".test.js")
+  local bufname = vim.fn.bufname("%")
+  local test_filename = bufname:gsub("%.js$", ".test.js")
 
-	-- if current buffer is already a test file, the set it as test_filename
-	if bufname:find("%.test.js$") then
-		test_filename = bufname
-	end
+  -- if current buffer is already a test file, the set it as test_filename
+  if bufname:find("%.test.js$") then
+    test_filename = bufname
+  end
 
-	local f = io.open(test_filename, "r")
+  local f = io.open(test_filename, "r")
 
-	if f ~= nil then
-		-- If test file exists, close it (only opened to check if it exists)
-		io.close(f)
+  if f ~= nil then
+    -- If test file exists, close it (only opened to check if it exists)
+    io.close(f)
 
-		-- Capture the output of the test cmd
-		local output = vim.fn.system("npm run test -- " .. test_filename)
+    -- Capture the output of the test cmd
+    local output = vim.fn.system("npm run test -- " .. test_filename)
 
-		-- Create new scratch & put the output into it
-		vim.cmd("new")
-		local bufnr = vim.api.nvim_get_current_buf()
-		vim.api.nvim_buf_set_option(bufnr, "buftype", "nofile")
-		vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, vim.split(output, "\n"))
-	else
-		-- if test file does not exists, show alert
-		print("No test file exists for " .. bufname)
-	end
+    -- Create new scratch & put the output into it
+    vim.cmd("new")
+    local bufnr = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_option(bufnr, "buftype", "nofile")
+    vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, vim.split(output, "\n"))
+  else
+    -- if test file does not exists, show alert
+    print("No test file exists for " .. bufname)
+  end
 end, { noremap = true, silent = true, desc = "Run test file for current buffer" })
 
 -- keymap to open test file for current buffer in a split buffer
 vim.keymap.set("n", "<leader>to", function()
-	local bufname = vim.fn.bufname("%")
-	local test_filename = bufname:gsub("%.js$", ".test.js")
-	local f = io.open(test_filename, "r")
+  local bufname = vim.fn.bufname("%")
+  local test_filename = bufname:gsub("%.js$", ".test.js")
+  local f = io.open(test_filename, "r")
 
-	if f ~= nil then
-		-- If test file exists, open it in vertical split
-		io.close(f)
-		vim.cmd("vsplit " .. test_filename)
-	else
-		-- if test file does not exists, show alert
-		print("No test file exists for " .. bufname)
-	end
+  if f ~= nil then
+    -- If test file exists, open it in vertical split
+    io.close(f)
+    vim.cmd("vsplit " .. test_filename)
+  else
+    -- if test file does not exists, show alert
+    print("No test file exists for " .. bufname)
+  end
 end, { noremap = true, silent = true, desc = "Open test file for current buffer" })
