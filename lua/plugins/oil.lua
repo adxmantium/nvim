@@ -15,6 +15,9 @@ return {
         -- Padding around the floating window
         padding = 20,
       },
+      view_options = {
+        show_hidden = true,
+      }
     })
   end,
 }
