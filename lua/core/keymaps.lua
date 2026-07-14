@@ -108,3 +108,21 @@ vim.keymap.set("n", "<leader>to", function()
     print("No test file exists for " .. bufname)
   end
 end, { noremap = true, silent = true, desc = "Open test file for current buffer" })
+
+-- yank visual selection prefixed with `relative/path:line[-line]` header
+vim.keymap.set("x", "<leader>Y", function()
+  -- leave visual so '< and '> reflect the just-finished selection
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "x", false)
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local lines = vim.fn.getline(start_line, end_line)
+  local relpath = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":.")
+  local header = relpath .. ":" .. start_line
+  if end_line ~= start_line then
+    header = header .. "-" .. end_line
+  end
+  local payload = header .. "\n" .. table.concat(lines, "\n")
+  vim.fn.setreg("+", payload)
+  vim.fn.setreg('"', payload)
+  vim.notify("Yanked " .. header, vim.log.levels.INFO)
+end, { desc = "Yank selection with file:line header" })
