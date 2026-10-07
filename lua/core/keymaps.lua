@@ -46,6 +46,31 @@ vim.keymap.set(
   { desc = "Replace all instances of current word" }
 )
 
+-- split a selection into one sentence per line (break on periods)
+vim.keymap.set("x", "<leader>ss", [[:s/\.\s*/.\r/g<CR>:nohl<CR>]], { silent = true, desc = "Split sentences on periods" })
+
+-- same as <leader>ss, but turns each sentence into a `- ` list item
+vim.keymap.set("x", "<leader>sl", function()
+  -- leave visual so '< and '> reflect the just-finished selection
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "x", false)
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+
+  local out = {}
+  for _, line in ipairs(vim.fn.getline(start_line, end_line)) do
+    local indent = line:match("^%s*")
+    -- break after each period, then keep only the non-empty pieces
+    for sentence in line:gsub("%.%s*", ".\n"):gmatch("[^\n]+") do
+      sentence = vim.trim(sentence)
+      if sentence ~= "" then
+        table.insert(out, indent .. "- " .. sentence)
+      end
+    end
+  end
+
+  vim.api.nvim_buf_set_lines(0, start_line - 1, end_line, false, out)
+end, { desc = "Split sentences into a `- ` list" })
+
 -- tmux keymaps - changes sessions (custom name or by dirname)
 -- vim.keymap.set(
 -- 	"n",

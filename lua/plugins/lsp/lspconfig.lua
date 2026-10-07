@@ -100,6 +100,18 @@ return {
 			filetypes = { "go", "gomod" },
 		})
 
+		-- configure tailwind server (only attaches in projects where tailwind is detected)
+		lspconfig["tailwindcss"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			settings = {
+				tailwindCSS = {
+					-- also complete class names inside these helper calls, not just class/className attributes
+					classFunctions = { "clsx", "cn", "cva", "twMerge", "tw" },
+				},
+			},
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,

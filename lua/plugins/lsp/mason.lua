@@ -32,6 +32,7 @@ return {
 				"lua_ls",
 				"gopls",
 				"intelephense",
+				"tailwindcss",
 				-- "eslint",
 				-- "cssls",
 				-- "emmet_ls",
